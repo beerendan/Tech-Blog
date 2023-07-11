@@ -144,7 +144,7 @@
     font-weight: bold;
   }
   
-  .gallery-name {
+  .extra {
     text-transform: uppercase;
     letter-spacing: 3px;
     text-shadow: 2px 2px 5px var(--secondary);
