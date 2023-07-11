@@ -13,11 +13,11 @@ router.get('/', async(req,res)=>{
             ],
         });
         
-        const posts=postData.map((blogPost)=> blogPost.get({plain:true}));
+        const posts=postData.map((post)=> post.get({plain:true}));
 
         res.render('homepage',{
             posts,
-            logged_in: req.session.logged_in
+            loggedIn: req.session.loggedIn
         });
     } catch(err){
         res.status(500).json(err);
@@ -35,9 +35,9 @@ router.get('/posts/:id', async(req,res)=>{
             ],
         });
         const posts=postData.get({plain:true});
-        res.render('blogPost',{
+        res.render('post',{
             ...posts,
-            logged_in: req.session.logged_in
+            loggedIn: req.session.loggedIn
         });
     } catch (err){
         res.status(500).json(err);
@@ -54,7 +54,7 @@ router.get('/dashboard', withAuth, async(req,res)=>{
         
         res.render('dashboard',{
             ...user,
-            logged_in:true
+            loggedIn:true
         });
     } catch(err){
         res.status(500).json(err);
@@ -62,7 +62,7 @@ router.get('/dashboard', withAuth, async(req,res)=>{
 });
 
 router.get('/login',(req,res)=>{
-    if(req.session.logged_in){
+    if(req.session.loggedIn){
         res.redirect('/dashboard');
         return;
     }

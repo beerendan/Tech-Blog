@@ -1,0 +1,43 @@
+<div class="row">
+  <div class="col-auto">
+    <h2>Welcome, {{name}}!</h2>
+  </div>
+</div>
+
+<div class="row mt-4">
+  <div class="col-md-6">
+    <h3>Create a New Post:</h3>
+
+    <form class="form new-post-form">
+      <div class="form-group">
+        <label for="post-name">Post Title:</label>
+        <input class="form-input" type="text" id="post-name" name="post-name" />
+      </div>
+      
+      <div class="form-group">
+        <label for="body">What would you like to share?</label>
+        <textarea class="form-input" id="body" name="body"></textarea>
+      </div>
+      <div class="form-group">
+        <button type="submit" class="btn btn-primary">Post</button>
+      </div>
+    </form>
+  </div>
+{{#if posts.length}}
+<div class="col-6 post-list">
+    <h2>Your Posts:</h2>
+    {{#each posts as |post|}}
+    <div class="col-8">
+        <h3><a href="/posts/{{post.id}}">{{post.name}}</a></h3>
+    </div>
+          <div class="col-md-4">
+        <button class="btn btn-sm btn-danger" data-id="{{post.id}}">Remove Post</button>
+      </div>
+    </div>
+    {{/each}}
+  </div>
+  {{/if}}
+
+</div>
+
+<script src="./js/display.js"></script>

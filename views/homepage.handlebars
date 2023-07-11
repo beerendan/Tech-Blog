@@ -1,32 +1,13 @@
-<div class="login-card">
-  <h1>
-    New Post
-  </h1>
-  <input
-    class="form-input"
-    type="userPost"
-    id="titleInput"
-    placeholder="Title"
-  />
-  <input
-    class="form-input"
-    type="userPost"
-    id="textBody"
-    placeholder="body"
-  />
-  <button class="btn btn-primary" type="submit">
-    Post
-  </button>
-</div>
-<div class="login-card">
-  <div>
-    <header>
-      <h1>
-        Other Posts
-      </h1>
-    </header>
-  </div>
-  <div>
-  {{item.0.title}}
+{{#each post as |post|}}
+<div class="row mb-4 post">
+  <div class="col-md-5">
+    <h2>
+      <a href="/post/{{post.id}}">{{post.name}}</a>
+    </h2>
+    <p>
+      <span class="body">{{body}}</span>
+    </p>
+  <p>Posted By {{post.user.name}} on {{format_date post.date_created}}</p>
   </div>
 </div>
+{{/each}}

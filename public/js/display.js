@@ -9,7 +9,7 @@ if (thisLocation == homeLocation) {
 async function displayPosts() {
 
     console.log("Displaying Post(s)")
-    const postRes = await fetch('api/post/', {
+    const postRes = await fetch('api/posts/', {
         method: 'GET',
         headers: { 'Content-Type': 'application/json' },
     })
