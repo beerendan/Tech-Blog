@@ -14,7 +14,7 @@ const seedDb=async()=>{
     for(const post of postData){
         await Post.create({
             ...post,
-            user_id:user[Math.floor(Math.random()*user.length)].id,
+            user_id:user[Math.floor(Math.random() * user.length)].id,
         });
     }
     process.exit(0);

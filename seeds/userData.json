@@ -1,6 +1,7 @@
 [
     {
-        "name":"Brendan",
+        "id": 1,
+        "username":"Brendan",
         "email":"brendanrbowen@gmail.com",
         "password":"brendan"
     }

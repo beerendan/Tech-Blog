@@ -23,5 +23,5 @@ async function displayPosts() {
     };
 
     console.log(item);
-    console.log(item[0].name);
+    console.log(item[0].title);
 };

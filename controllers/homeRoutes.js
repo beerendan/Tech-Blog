@@ -8,7 +8,7 @@ router.get('/', async(req,res)=>{
             include: [
                 {
                     model: User,
-                    attributes:['name'],
+                    attributes:['username'],
                 },
             ],
         });
@@ -30,13 +30,13 @@ router.get('/posts/:id', async(req,res)=>{
             include:[
                 {
                     model: User,
-                    attributes: ['name'],
+                    attributes: ['username'],
                 },
             ],
         });
-        const posts=postData.get({plain:true});
+        const post=postData.get({plain:true});
         res.render('post',{
-            ...posts,
+            ...post,
             loggedIn: req.session.loggedIn
         });
     } catch (err){
