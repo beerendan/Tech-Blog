@@ -5,7 +5,7 @@ module.exports = {
     HOST: process.env.HOST,
     USER: 'root',
     PASSWORD: process.env.PASSWORD,
-    DB: "recipe_db",
+    DB: "techblog_db",
     dialect: "mysql",
     pool: {
         max: 5,
